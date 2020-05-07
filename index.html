@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<!-- head要素のprefix属性でOGP用のプロパティの初期設定を書いておくのが正式。別になくてもいいらしいけれど -->
+
+<meta charset="UTF-8">
+<!-- 文字コードは特別なことがない限りUTF-8を基本とする -->
+
+<title></title>
+<!-- 納品前にtitleの入れ忘れに気を付ける。全角で35文字前後が検索結果に表示され、それを大きく超過する場合には「…」で途切れてしまうので注意して設定すること。TITLEタグは短いほうが優位性が高まる。何度も繰り返してしまうと冗長文字として判断され不利になる。
+基本
+・社名に加えて業種や商品名なども付記する
+・地域名を必ず入れる
+・接続語をなるべく用いず一句で書く
+・基本的に、業種などの記述が先（優先したいキーワードを先に記述）
+・極限まで文字数を少なくする
+ -->
+
+
+
+<!-- ここからOGP用メタタグ -->
+<meta property="og:site_name" content="ページのタイトル">
+<!-- サイトのタイトルを記述。これを省略すれば<title>要素の内容になる -->
+<meta property="og:title" content="ページのタイトル">
+<!-- ページのタイトルを記述。サイトタイトルではなく、ページタイトルであることに注意 -->
+<meta property="og:description" content="ページのディスクリプション">
+<!-- ページのディスクリプションを記述。 -->
+<meta property="og:type" content="website">
+<!-- ページのオブジェクトタイプを記述。website , blog , article , profile , music , video 等。省略するとwebsiteになる。-->
+<meta property="og:url" content="ページのURL">
+<!-- ページのURLを絶対パスで記述 -->
+<meta property="og:image" content="画像のURL">
+<!-- 表示する画像のURLを絶対パスで記述 -->
+<meta property="og:locale" content="ja">
+<!-- ローカル言語。デフォは en US -->
+<meta property="fb:app_id" content="App-ID（15文字の半角数字）">
+<!-- facebook専用メタタグ。facebookで取得したApp-Idを記述 -->
+<meta property="fb:admins" content="adminID（15文字の半角数字）">
+<!-- facebook専用メタタグ。上記のApp-IDかこちらかのどちらか1つを記述すればよい -->
+<meta name="twitter:card" content="summary">
+<!-- Twitter専用メタタグ。カードの種類を記述する。デフォルトではsummary。他にsummary_large_image photo gallery -->
+<meta name="twitter:site" content="@[Twitter ID]">
+<!-- Twitter専用メタタグ。必須ではない。カードのフッターに「@[Twitter ID]」が表示される -->
+<!-- Facebookの用意したデバッガ (https://developers.facebook.com/tools/debug) でOGPの記述が正しいか確認。Twitter用のデバッガ (https://cards-dev.twitter.com/validator) もあるのでそちらも確認すること -->
+<!-- ここまでOGP用メタタグ -->
+
+
+
+<meta name="viewport" content="width=device-width">
+<!-- スマホ対応時のviewportの指定に気を付ける。 -->
+
+<meta name="robots" content="">
+<!-- 検索エンジンのクロールの可否の設定。影響は少ない。 -->
+
+<meta name="format-detection" content="telephone=no">
+<!-- iPhone向け機能。電話番号の自動リンク機能を制御することができる -->
+
+<meta name="description" content="#">
+<!-- 検索結果のスニペットとして表示する。複数のページで同一の内容を使用してはいけない。重複して使用するくらいであれば書かない方がよい。メタディスクリプションはおよそ全角120文字を超過した場合に途切れるので注意して設定すること -->
+
+<meta name="keywords" content="#">
+<!-- keywordsの設定は検索に影響を及ぼすので意識して設定すること。しかし、主流の検索エンジンはmeta keywordsを無視しているので、そこまで注意を払わなくても良い可能性がある(2012年11月現在)。
+基本
+・ページ内で使用していないキーワードを使用しない
+・本文中の強調系タグに適用されている文言が望ましい。
+・文章を書かない
+・大量に書かない。1個では駄目だが、2個が望ましい。 ただし、類似のキーワードや連携したいキーワード等も含め5個までと考えて良い。
+以上に注意して設定すること -->
+
+<meta name="google" content="notranslate">
+<!-- ページのコンテンツがユーザの言語と異なる際に翻訳版へのリンクが表示されることがある。結果的に多くのユーザにコンテンツを提供できるが、状況によっては望ましくないこともある。このタグでページの翻訳版を提供しないように設定することができる。 -->
+
+<link rel="icon" href="">
+<!-- ブラウザのアドレスバーなどに表示される小さなアイコン、ファビコンを指定することができる。 -->
+
+<link rel="apple-touch-icon" href="">
+<!-- 画像を指定することで、用意した画像をスマホのホーム画面にショートカットアイコンとして設置することができる。また、ルートパス等で指定すると機種によっては認識されない場合があるので絶対パスで指定すること。 -->
+
+<link rel="canonical" href="">
+<!-- URLの正規化タグ。検索エンジンに、このエージを指定先のURLのコピーとして扱うべきだと知らせるタグ。リンクとコンテンツの指標は指定先のURLに還元される。スマホ用ページを別URLで表示させる場合には必須。また、A/Bテストを行う際、2つの重複コンテンツが発生するなどの場合にも有用である。Googleによると、<head>直後に記述するのがよいと言われている。 -->
+
+
+<!-- ここから css　読込 -->
+
+<link rel="stylesheet" href="style.css">
+<!-- cssの圧縮化の為、編集はsassで行い結合後style.cssに一元化、また圧縮化して読み込ませるのが望ましい -->
+
+<!-- ここまで css　読込 -->
+</head>
+
+<body>
+
+<header>
+	<div class="inner">
+
+	</div><!-- //.inner -->
+</header><!-- //header -->
+
+
+<div id="Contents">
+	<div class="inner">
+
+	</div><!-- //.inner -->
+</div><!-- //#Contents  -->
+
+
+<footer>
+	<div class="inner">
+
+	</div><!-- //.inner -->
+</footer><!-- //footer -->
+
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+<!-- ここから script 読込 -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- ここまで script 読込 -->
+<!-- scriptはhead内で読み込ませず、bodyの閉じタグ直前で読み込ませることによってhtmlの描画速度を上げる。ただし、スクロールしないとコンテンツが出現しないようなサイトの場合、下部で読み込んでしまうとJavaScriptを読み込むまでスクロールが出来ないのでユーザビリティを阻害する可能性がある。 -->
+
+</body>
+</html>
